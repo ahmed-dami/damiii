@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wxcvbnn index{% endblock %}
+
+{% block body %}
+    <h1>Wxcvbnn index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Wxcvbnn</th>
+                <th>Nnnn</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for wxcvbnn in wxcvbnns %}
+            <tr>
+                <td>{{ wxcvbnn.id }}</td>
+                <td>{{ wxcvbnn.wxcvbnn }}</td>
+                <td>{{ wxcvbnn.nnnn }}</td>
+                <td>
+                    <a href="{{ path('wxcvbnn_show', {'id': wxcvbnn.id}) }}">show</a>
+                    <a href="{{ path('wxcvbnn_edit', {'id': wxcvbnn.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('wxcvbnn_new') }}">Create new</a>
+{% endblock %}

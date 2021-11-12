@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Wxcvbnn{% endblock %}
+
+{% block body %}
+    <h1>Edit Wxcvbnn</h1>
+
+    {{ include('wxcvbnn/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('wxcvbnn_index') }}">back to list</a>
+
+    {{ include('wxcvbnn/_delete_form.html.twig') }}
+{% endblock %}
